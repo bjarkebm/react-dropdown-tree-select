@@ -19,6 +19,7 @@ const cx = cn.bind(styles)
 class DropdownTreeSelect extends Component {
   static propTypes = {
     data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    clearSearchOnChange: PropTypes.bool,
     keepTreeOnSearch: PropTypes.bool,
     placeholderText: PropTypes.string,
     showDropdown: PropTypes.bool,
@@ -124,6 +125,9 @@ class DropdownTreeSelect extends Component {
     this.setState({ tree: this.treeManager.tree, tags, showDropdown })
     if (this.props.simpleSelect) this.resetSearch()
     this.notifyChange(this.treeManager.getNodeById(id), tags)
+    if (this.props.clearSearchOnChange) {
+      this.resetSearch()
+    }
   }
 
   onAction = (actionId, nodeId) => {
