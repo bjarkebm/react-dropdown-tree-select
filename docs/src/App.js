@@ -28,7 +28,8 @@ const stories = [
     name: 'Prevent re-render on parent render (HOC)',
     component: CodeSandbox('v05klkn56l')
   },
-  { name: 'Tree Node Paths (HOC)', component: CodeSandbox('l765q6lmrq') }
+  { name: 'Tree Node Paths (HOC)', component: CodeSandbox('l765q6lmrq') },
+  { name: 'Clear search on node selection', component: CodeSandbox('jloz1222kv') }
 ]
 
 export default class App extends React.Component {
